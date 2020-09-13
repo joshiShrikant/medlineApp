@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
+import { MatDialogRef, MatDialog, MatSnackBar, MAT_DIALOG_DATA } from '@angular/material';
+
 @Component({
   selector: 'app-formreactive',
   templateUrl: './formreactive.component.html',
@@ -20,7 +22,9 @@ export class FormreactiveComponent implements OnInit {
     ])
     
    });
-    constructor() { }
+   constructor(private dialog: MatDialog,
+    private snackBar: MatSnackBar) {
+  }
   
     get firstname(){
       return this.form.get('firstName')
