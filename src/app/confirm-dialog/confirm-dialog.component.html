@@ -1,0 +1,17 @@
+<div mat-dialog-title style="color: blue;">
+    User Information
+    <!-- <button mat-button (click)="onConfirm()">x</button> -->
+</div>
+<div mat-dialog-content>
+    <div>
+        <h5>User has been created successfully with the below details</h5>
+    </div>
+    <div class="d-flex justify-content-center "><span class="tab-space"><b>User Name:</b></span><pre></pre> {{data.firstName}} {{data.lastName}}</div>
+    <div class="d-flex justify-content-center "><span class="tab-space"><b>Phone:</b></span><pre>     </pre>{{data.phone}} </div>
+    <div class="d-flex justify-content-center "><span class="tab-space"><b>Email: </b></span> {{data.email}}</div>
+
+</div>
+<div mat-dialog-actions class="footer-action-div" fxLayout="row" fxLayoutAlign="center center">
+    <!-- <button class="secondary-action" mat-button (click)="onCancel()">CANCEL</button> -->
+    <button class="primary-action" mat-button (click)="onConfirm()">OK</button>
+</div>

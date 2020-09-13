@@ -1,1 +1,41 @@
 /* Add application styles & imports to this file! */
+
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+.name-width {
+    width: 45%;
+}
+
+.phone-width {
+    width: 25%;
+}
+
+.ext-width {
+    width: 15%;
+}
+
+.footer-action-div {
+    max-width: 1300px;
+    /* margin: 0 auto 8px; */
+    width: 100%;
+}
+
+.primary-action {
+    line-height: 26px !important;
+    display: inline-block;
+    font-size: 12px;
+    padding: 0px 12px !important;
+    border-radius: 15px;
+    color: #fff;
+    text-transform: uppercase;
+    background-color: rgb(6, 150, 13);
+    transition: all .3s;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    align-self: normal;
+    margin-left: 235px !important;
+}
+
+.tab-space {
+    margin-right: 10%;
+}

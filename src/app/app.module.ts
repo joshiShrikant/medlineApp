@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { FormreactiveComponent } from './formreactive/formreactive.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import {
   MatAutocompleteModule,
@@ -36,15 +37,18 @@ import {
   MatToolbarModule,
   MatTooltipModule,
 } from '@angular/material';
+import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FormreactiveComponent,
+    ConfirmDialogComponent,
   ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
+    BrowserAnimationsModule,
 
      // Material
      MatAutocompleteModule,
@@ -79,7 +83,7 @@ import {
     
   ],
   providers: [],
-  // entryComponents: [ConfirmationDialogComponent],
+  entryComponents: [ConfirmDialogComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

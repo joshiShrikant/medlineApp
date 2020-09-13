@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 import { MatDialogRef, MatDialog, MatSnackBar, MAT_DIALOG_DATA } from '@angular/material';
+import { ConfirmDialogComponent } from '../confirm-dialog/confirm-dialog.component';
 
 @Component({
   selector: 'app-formreactive',
@@ -12,15 +13,12 @@ export class FormreactiveComponent implements OnInit {
   form = new FormGroup({
     firstName: new FormControl('', Validators.required),
     lastName: new FormControl('', Validators.required),
+    phone: new FormControl('', Validators.required),
+    ext: new FormControl(''),
     email: new FormControl('', [
       Validators.required,
       Validators.email
-    ]),
-    password: new FormControl('', [
-      Validators.required,
-      Validators.minLength(6)
-    ])
-    
+    ]),    
    });
    constructor(private dialog: MatDialog,
     private snackBar: MatSnackBar) {
@@ -32,8 +30,21 @@ export class FormreactiveComponent implements OnInit {
     ngOnInit() {
     }
   
+    openDialog(){
+      let dialogRef = this.dialog.open(ConfirmDialogComponent, {
+        width: '600px',
+        data: this.form.value
+      });
+  
+      dialogRef.afterClosed().subscribe(result => {
+        console.log('The dialog was closed');
+        // this.animal = result;
+      });
+    }
     onSubmit(){
-      alert(JSON.stringify(this.form.value));
+      // debugger
+      // alert(JSON.stringify(this.form.value));
+      this.openDialog();
     }
 
 }
